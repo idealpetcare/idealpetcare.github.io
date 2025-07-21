@@ -185,7 +185,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(78, 156, 129, 0.9) 0%, rgba(255, 154, 118, 0.85) 100%), url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(78, 156, 129, 0.9) 0%, rgba(255, 154, 118, 0.85) 100%), url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -503,23 +503,16 @@
             
             .nav-links {
                 margin-top: 15px;
-            }
-            
-            .nav-links li {
-                margin: 0 10px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
             }
             
             .nav-links li {
-                margin: 5px 10px;
+                margin: 5px 15px;
             }
-            
+        }
+        
+        @media (max-width: 480px) {
             .hero {
                 height: auto;
                 padding: 120px 0 80px;
@@ -528,6 +521,47 @@
             section {
                 padding: 60px 0;
             }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* New Animation Effects */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        /* Contact Form Improvements */
+        .contact-form .form-group input:focus,
+        .contact-form .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(78, 156, 129, 0.2);
+            outline: none;
+        }
+        
+        /* Hover Effects for Cards */
+        .feature-card, .pet-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        /* Footer Improvements */
+        footer {
+            background: linear-gradient(to right, #2c3e50, #1a2a6c);
         }
     </style>
 </head>
@@ -554,9 +588,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animated">
                 <h1>Exceptional Care for Your Beloved Pets</h1>
-                <p>Trusted by thousands of American pet owners to provide the best care and information for your furry family members.</p>
+                <p>Trusted by thousands of pet owners to provide the best care and information for your furry family members.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn">Schedule a Consultation</a>
                     <a href="#features" class="btn btn-secondary">Our Services</a>
@@ -568,47 +602,47 @@
     <!-- Features/Services Section -->
     <section id="features" class="features">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title animated">
                 <h2>Our Premium Services</h2>
                 <p>We provide comprehensive pet care solutions tailored to your pet's unique needs.</p>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card animated delay-1">
                     <div class="feature-icon">
                         <i class="fas fa-stethoscope"></i>
                     </div>
                     <h3>Veterinary Care</h3>
                     <p>Regular check-ups, vaccinations, and emergency care by certified veterinarians to keep your pet healthy.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card animated delay-1">
                     <div class="feature-icon">
                         <i class="fas fa-cut"></i>
                     </div>
                     <h3>Grooming</h3>
                     <p>Professional grooming services including bathing, haircuts, nail trimming, and ear cleaning.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card animated delay-2">
                     <div class="feature-icon">
                         <i class="fas fa-home"></i>
                     </div>
                     <h3>Boarding</h3>
                     <p>Safe and comfortable boarding facilities for when you need to be away from your pet.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card animated delay-2">
                     <div class="feature-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Training</h3>
                     <p>Expert training programs to help your pet learn obedience and good behavior.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card animated delay-3">
                     <div class="feature-icon">
                         <i class="fas fa-bone"></i>
                     </div>
                     <h3>Nutrition Guidance</h3>
                     <p>Personalized diet plans and nutritional advice to keep your pet at optimal health.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card animated delay-3">
                     <div class="feature-icon">
                         <i class="fas fa-heartbeat"></i>
                     </div>
@@ -622,12 +656,12 @@
     <!-- Pet Types Section -->
     <section id="pets" class="pet-types">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title animated">
                 <h2>Pet Care Resources</h2>
                 <p>Comprehensive guides for different types of pets</p>
             </div>
             <div class="pets-grid">
-                <div class="pet-card">
+                <div class="pet-card animated delay-1">
                     <div class="pet-img">
                         <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dog">
                     </div>
@@ -637,7 +671,7 @@
                         <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
-                <div class="pet-card">
+                <div class="pet-card animated delay-2">
                     <div class="pet-img">
                         <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cat">
                     </div>
@@ -647,7 +681,7 @@
                         <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
-                <div class="pet-card">
+                <div class="pet-card animated delay-3">
                     <div class="pet-img">
                         <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bird">
                     </div>
@@ -657,7 +691,7 @@
                         <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
-                <div class="pet-card">
+                <div class="pet-card animated delay-4">
                     <div class="pet-img">
                         <img src="https://images.unsplash.com/photo-1556817413-f7c9bd8e6b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Small Pet">
                     </div>
@@ -674,12 +708,12 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title animated">
                 <h2>What Pet Owners Say</h2>
                 <p>Thousands of happy pets and satisfied owners across America</p>
             </div>
             <div class="testimonial-container">
-                <div class="testimonial">
+                <div class="testimonial animated">
                     <p>"Ideal Pet Care has been a lifesaver for my golden retriever, Max. Their veterinarians are knowledgeable and compassionate, and their grooming services are top-notch!"</p>
                     <div class="client">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
@@ -689,7 +723,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="testimonial">
+                <div class="testimonial animated delay-1">
                     <p>"As a first-time cat owner, I was overwhelmed. The team at Ideal Pet Care guided me through everything from nutrition to behavior training. Whiskers is thriving thanks to them!"</p>
                     <div class="client">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
@@ -706,12 +740,12 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title animated">
                 <h2>Get In Touch</h2>
                 <p>Have questions? We're here to help!</p>
             </div>
             <div class="contact-container">
-                <div class="contact-info">
+                <div class="contact-info animated">
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -736,7 +770,7 @@
                         </div>
                         <div>
                             <h4>Email</h4>
-                            <p>info@idealpetcare.com</p>
+                            <p>gohar1khan1044@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -749,8 +783,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form>
+                <div class="contact-form animated delay-1">
+                    <form id="contactForm">
                         <div class="form-group">
                             <input type="text" placeholder="Your Name" required>
                         </div>
@@ -807,7 +841,7 @@
                 <div class="footer-col">
                     <h3>Newsletter</h3>
                     <p>Subscribe for pet care tips and special offers</p>
-                    <form>
+                    <form id="newsletterForm">
                         <div class="form-group">
                             <input type="email" placeholder="Your Email" required>
                         </div>
@@ -816,53 +850,94 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Ideal Pet Care. All rights reserved.</p>
+                <p>&copy; 2025 Ideal Pet Care. All rights reserved by Hiader Sial.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Wait for the DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
-        });
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-                header.style.background = 'rgba(255,255,255,0.95)';
-            } else {
-                header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
-                header.style.background = 'white';
-            }
-        });
-
-        // Testimonial slider
-        let currentTestimonial = 0;
-        const testimonials = document.querySelectorAll('.testimonial');
-        
-        function showTestimonial(index) {
-            testimonials.forEach(testimonial => {
-                testimonial.style.display = 'none';
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                    header.style.background = 'rgba(255,255,255,0.95)';
+                } else {
+                    header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+                    header.style.background = 'white';
+                }
             });
-            testimonials[index].style.display = 'block';
-        }
-        
-        function nextTestimonial() {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        }
-        
-        // Initialize
-        showTestimonial(currentTestimonial);
-        setInterval(nextTestimonial, 5000);
+
+            // Testimonial slider
+            let currentTestimonial = 0;
+            const testimonials = document.querySelectorAll('.testimonial');
+            const testimonialCount = testimonials.length;
+            
+            function showTestimonial(index) {
+                testimonials.forEach((testimonial, i) => {
+                    testimonial.style.display = i === index ? 'block' : 'none';
+                });
+            }
+            
+            function nextTestimonial() {
+                currentTestimonial = (currentTestimonial + 1) % testimonialCount;
+                showTestimonial(currentTestimonial);
+            }
+            
+            // Initialize testimonial slider
+            if (testimonialCount > 0) {
+                showTestimonial(currentTestimonial);
+                setInterval(nextTestimonial, 5000);
+            }
+
+            // Form submission handlers
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you! Your message has been sent. We will contact you soon.');
+                this.reset();
+            });
+
+            document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+                this.reset();
+            });
+            
+            // Animation on scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements with the 'animated' class
+            document.querySelectorAll('.section-title, .feature-card, .pet-card, .testimonial, .contact-info, .contact-form').forEach(el => {
+                observer.observe(el);
+            });
+        });
     </script>
 </body>
 </html>
